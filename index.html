@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>The Psychic Game</h1>
+    <div id="infoDiv">
+        <p>Using your keyboard, guess the letter I'm thinking.</p>
+    </div>
+
+    <div id="winsDiv">
+
+    </div>
+    <div id="lossesDiv">
+
+    </div>
+    <div id="cntDiv">
+
+    </div>
+    <div id="soFarDiv">
+
+    </div>
+</body>
+<script type="text/javascript">
+    var guessCnt = 0;
+    var correctGuess = false;
+    var playerGuess = "";
+
+    var infoDiv = $("#infoDiv");
+    var winsDiv = $("#winsDiv");
+    var lossesDiv = $("#lossesDiv");
+    var cntDiv = $("#cntDiv");
+    var soFarDiv = $("#soFarDiv");
+    var connectStr = "";
+    // 97 - 122
+
+    // for (var i = 65; i <= 90; i++) {
+    //     // var lowerChar = String.fromCharCode(i + 32);
+    //     // var upperChar = String.fromCharCode(i);
+    //     // letterArr.push(lowerChar);
+    //     // letterArr.push(upperChar);
+
+    //     letterArr.push(String.fromCharCode(i + 32));
+    //     letterArr.push(String.fromCharCode(i));
+    // };
+
+    var myLetter = String.fromCharCode(Math.floor(Math.random() * (122 - 97 + 1)) + 97);
+
+    function updateResults (playerGuess) {
+        if (guessCnt == 0) {
+            // Do nothing on first load
+        } else if (playerGuess.charCodeAt(0) < 97 || playerGuess.charCodeAt(0) > 122) {
+            alert("You pressed an invalid key. Please only select a lowercase lettter between 'a' and 'z'");
+        } else {
+            guessCnt = guessCnt + 1;
+            if (guessCnt == 1) {connectStr = ""} else {connectStr = ", "};
+            
+        };
+    };
+    $("#")
+</script>
+</html>
